@@ -13,10 +13,20 @@ dist
 dist-ssr
 coverage
 *.local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS Files
+.DS_Store
+Thumbs.db
+db.sqlite3
+
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
+.vscode/
 .idea
 *.suo
 *.ntvs*
