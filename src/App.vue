@@ -14,6 +14,11 @@
             Practical 2
             <span class="btn-subtext">Component Nesting (Props & Emits)</span>
           </button>
+
+          <button class="portal-btn btn-three" @click="activePrac = 'three'">
+            Practical 3
+            <span class="btn-subtext">Document Manager (Pinia, Axios and Express)</span>
+          </button>
         </div>
       </div>
     </div>
@@ -28,6 +33,7 @@
       <!-- Render corresponding practical dynamically -->
       <PracOne v-if="activePrac === 'one'" />
       <PracTwo v-else-if="activePrac === 'two'" />
+      <PracThree v-else-if="activePrac === 'three'" />
     </div>
   </div>
 </template>
@@ -36,6 +42,7 @@
 import { ref } from 'vue';
 import PracOne from './prac_one/App.vue';
 import PracTwo from './prac_two/App.vue';
+import PracThree from './prac_three/App.vue';
 
 const activePrac = ref(null);
 </script>
@@ -119,6 +126,15 @@ h3 {
 
 .btn-two:hover {
   background: #059669;
+  transform: translateY(-2px);
+}
+
+.btn-three {
+  background: #8b5cf6;
+}
+
+.btn-three:hover {
+  background: #7c3aed;
   transform: translateY(-2px);
 }
 
