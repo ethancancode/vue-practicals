@@ -1,0 +1,187 @@
+/* Simplified CSS Layout for Practical 4 */
+.prac-four-body {
+  max-width: 650px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Header with toggle view button */
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.header-section h2 {
+  margin: 0;
+}
+
+.btn-toggle-view {
+  background: #555;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Simple Step Text Indicator */
+.progress-bar-text {
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border-left: 4px solid #0056b3;
+}
+
+/* Form controls */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.grid-2 {
+  display: flex;
+  gap: 15px;
+}
+
+.grid-2 > div {
+  flex: 1;
+}
+
+/* Work Experience Entries */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.experience-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  background: #fafafa;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin: 5px 0 0 0;
+}
+
+/* Review details */
+.summary-section {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 15px;
+}
+
+.summary-section h4 {
+  margin: 0 0 8px 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
+
+.summary-section p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.exp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.exp-table th, .exp-table td {
+  border: 1px solid #ddd;
+  padding: 6px 8px;
+  text-align: left;
+}
+
+.exp-table th {
+  background: #eee;
+}
+
+/* Navigation buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-next { background: #0056b3; color: white; }
+.btn-next:disabled { background: #ccc; cursor: not-allowed; }
+.btn-back { background: #e0e0e0; color: #333; }
+.btn-submit { background: #28a745; color: white; }
+.btn-add { background: #17a2b8; color: white; }
+.btn-remove { background: #dc3545; color: white; padding: 4px 8px; font-size: 12px; }
+
+/* Submissions list */
+.sub-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: white;
+}
+
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+.sub-card p {
+  margin: 5px 0;
+  font-size: 13px;
+}
+
+.sub-experience ul {
+  margin: 5px 0 0 0;
+  padding-left: 20px;
+}
