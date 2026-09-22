@@ -15,7 +15,6 @@ const item = computed(() => items.find(i => i.id === itemId))
 
 <template>
   <div>
-    <p><NuxtLink to="/items">&larr; Back to Items</NuxtLink></p>
 
     <div v-if="item">
       <h2>{{ item.name }} (ID: {{ item.id }})</h2>

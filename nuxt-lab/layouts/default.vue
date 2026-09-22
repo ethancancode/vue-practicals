@@ -1,5 +1,8 @@
 <template>
   <div>
+    <p>
+      <a href="http://localhost:5173">← Back to Practicals Menu</a>
+    </p>
     <header>
       <h2>My Nuxt Site</h2>
       <nav>
@@ -9,12 +12,7 @@
       </nav>
     </header>
 
-    <main>
-      <slot />
-    </main>
+    <slot />
 
-    <footer>
-      <p>Shared Layout (layouts/default.vue)</p>
-    </footer>
   </div>
 </template>

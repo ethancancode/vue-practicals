@@ -10,6 +10,8 @@
     "isolatedModules": true
   },
   "include": [
-    "**/*"
+    "**/*",
+    "app.vue",
+    "nuxt.config.ts"
   ]
 }
