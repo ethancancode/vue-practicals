@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "npx concurrently \"vite\" \"npm --prefix src/prac_five run dev\"",
+    "dev:vite": "vite",
+    "dev:nuxt": "npm --prefix src/prac_five run dev",
     "build": "vite build",
     "preview": "vite preview"
   },

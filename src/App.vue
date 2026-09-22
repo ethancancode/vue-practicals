@@ -24,6 +24,11 @@
             Practical 4
             <span class="btn-subtext">Multi-Step Job Form (Pinia & MongoDB)</span>
           </button>
+
+          <button class="portal-btn btn-five" @click="activePrac = 'five'">
+            Practical 5
+            <span class="btn-subtext">Nuxt 3 Site (File-Based Routing & Layouts)</span>
+          </button>
         </div>
       </div>
     </div>
@@ -40,6 +45,7 @@
       <PracTwo v-else-if="activePrac === 'two'" />
       <PracThree v-else-if="activePrac === 'three'" />
       <PracFour v-else-if="activePrac === 'four'" />
+      <PracFive v-else-if="activePrac === 'five'" />
     </div>
   </div>
 </template>
@@ -50,6 +56,7 @@ import PracOne from './prac_one/App.vue';
 import PracTwo from './prac_two/App.vue';
 import PracThree from './prac_three/App.vue';
 import PracFour from './prac_four/App.vue';
+import PracFive from './prac_five/AppWrapper.vue';
 
 const activePrac = ref(null);
 </script>
@@ -151,6 +158,15 @@ h3 {
 
 .btn-four:hover {
   background: #d97706;
+  transform: translateY(-2px);
+}
+
+.btn-five {
+  background: #6366f1;
+}
+
+.btn-five:hover {
+  background: #4f46e5;
   transform: translateY(-2px);
 }
 
