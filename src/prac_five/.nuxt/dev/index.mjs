@@ -2820,10 +2820,12 @@ async function getIslandContext(event) {
 	};
 }
 
+const _lazy_tq0BcS = () => Promise.resolve().then(function () { return hello$1; });
 const _lazy_2r3g2r = () => Promise.resolve().then(function () { return renderer; });
 
 const handlers = [
   { route: '', handler: _Wwg0wz, lazy: false, middleware: true, method: undefined },
+  { route: '/api/hello', handler: _lazy_tq0BcS, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_2r3g2r, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: handler$1, lazy: false, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_2r3g2r, lazy: true, middleware: false, method: undefined }
@@ -3176,6 +3178,21 @@ const styles = {};
 const styles$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: styles
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const hello = defineEventHandler((event) => {
+  const query = getQuery$1(event);
+  const name = query.name ? String(query.name).trim() : "";
+  const message = name ? `Hello, ${name}!` : "Hello from Nuxt API!";
+  return {
+    message,
+    timestamp: (/* @__PURE__ */ new Date()).toISOString()
+  };
+});
+
+const hello$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: hello
 }, Symbol.toStringTag, { value: 'Module' }));
 
 function renderPayloadResponse(ssrContext) {

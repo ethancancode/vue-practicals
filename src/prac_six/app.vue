@@ -32,47 +32,40 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="container">
-    <p class="back-link">
+  <div style="padding: 20px; font-family: sans-serif;">
+    <p>
       <a href="http://localhost:5173">← Back to Practicals Menu</a>
     </p>
 
-    <div class="card">
-      <span class="badge">Practical 6 — Nuxt API Route</span>
-      <h1>Build Your First Nuxt API Route</h1>
-      <p class="subtitle">Nuxt 3 Server Endpoint (<code>server/api/hello.ts</code>)</p>
+    <h1>Practical 6: Nuxt API Route</h1>
+    <p>Nuxt 3 Server Endpoint (<code>server/api/hello.ts</code>)</p>
 
-      <!-- Bonus Query Param Input -->
-      <div class="input-group">
-        <input
-          v-model="nameInput"
-          type="text"
-          placeholder="Enter name (e.g. John)"
-          @keyup.enter="handleSearch"
-        />
-        <button @click="handleSearch" class="btn">Send Query (?name)</button>
-      </div>
+    <!-- Bonus Query Param Input -->
+    <div style="margin-bottom: 15px;">
+      <input
+        v-model="nameInput"
+        type="text"
+        placeholder="Enter name (e.g. John)"
+        @keyup.enter="handleSearch"
+      />
+      <button @click="handleSearch">Send Query (?name)</button>
+    </div>
 
-      <!-- Loading State -->
-      <div v-if="loading" class="status loading">
-        ⏳ Loading API response...
-      </div>
+    <!-- Loading State -->
+    <div v-if="loading">
+      <p>Loading...</p>
+    </div>
 
-      <!-- Error State -->
-      <div v-else-if="error" class="status error">
-        ❌ {{ error }}
-      </div>
+    <!-- Error State -->
+    <div v-else-if="error" style="color: red;">
+      <p>Failed to load API: {{ error }}</p>
+    </div>
 
-      <!-- Data Display -->
-      <div v-else-if="data" class="response-box">
-        <h3>API Response Payload:</h3>
-        <p class="message">{{ data.message }}</p>
-        <p class="timestamp"><strong>Timestamp:</strong> {{ data.timestamp }}</p>
-
-        <div class="console-note">
-          ℹ️ Check Browser Console (F12) to verify response payload logged with <code>console.log()</code>.
-        </div>
-      </div>
+    <!-- Data Display -->
+    <div v-else-if="data" style="border: 1px solid #ccc; padding: 15px; margin-top: 10px;">
+      <h3>API Response:</h3>
+      <p><strong>Message:</strong> {{ data.message }}</p>
+      <p><strong>Timestamp:</strong> {{ data.timestamp }}</p>
     </div>
   </div>
 </template>

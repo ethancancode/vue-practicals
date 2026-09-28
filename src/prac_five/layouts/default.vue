@@ -6,14 +6,12 @@
     <header>
       <h2>My Nuxt Site</h2>
       <nav>
-        <NuxtLink to="/">Home (Prac 5)</NuxtLink> |
+        <NuxtLink to="/">Home</NuxtLink> |
         <NuxtLink to="/about">About</NuxtLink> |
-        <NuxtLink to="/items">Items</NuxtLink> |
-        <NuxtLink to="/prac_six">Prac 6 (API Route)</NuxtLink>
+        <NuxtLink to="/items">Items</NuxtLink>
       </nav>
     </header>
 
     <slot />
-
   </div>
 </template>

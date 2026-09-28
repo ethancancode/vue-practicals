@@ -34,6 +34,11 @@
             Practical 6
             <span class="btn-subtext">Nuxt 3 API Endpoint (server/api/hello.ts & $fetch)</span>
           </button>
+
+          <button class="portal-btn btn-seven" @click="openPracSeven">
+            Practical 7
+            <span class="btn-subtext">External API Data Fetching (useFetch & JSONPlaceholder)</span>
+          </button>
         </div>
       </div>
     </div>
@@ -69,6 +74,10 @@ const openPracFive = () => {
 
 const openPracSix = () => {
   window.location.href = 'http://localhost:3000/prac_six';
+};
+
+const openPracSeven = () => {
+  window.location.href = 'http://localhost:3000/posts';
 };
 </script>
 
@@ -187,6 +196,15 @@ h3 {
 
 .btn-six:hover {
   background: #047857;
+  transform: translateY(-2px);
+}
+
+.btn-seven {
+  background: #0284c7;
+}
+
+.btn-seven:hover {
+  background: #0369a1;
   transform: translateY(-2px);
 }
 
