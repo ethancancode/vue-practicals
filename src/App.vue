@@ -29,6 +29,11 @@
             Practical 5
             <span class="btn-subtext">Nuxt 3 Site (File-Based Routing & Layouts)</span>
           </button>
+
+          <button class="portal-btn btn-six" @click="openPracSix">
+            Practical 6
+            <span class="btn-subtext">Nuxt 3 API Endpoint (server/api/hello.ts & $fetch)</span>
+          </button>
         </div>
       </div>
     </div>
@@ -60,6 +65,10 @@ const activePrac = ref(null);
 
 const openPracFive = () => {
   window.location.href = 'http://localhost:3000';
+};
+
+const openPracSix = () => {
+  window.location.href = 'http://localhost:3000/prac_six';
 };
 </script>
 
@@ -169,6 +178,15 @@ h3 {
 
 .btn-five:hover {
   background: #4f46e5;
+  transform: translateY(-2px);
+}
+
+.btn-six {
+  background: #059669;
+}
+
+.btn-six:hover {
+  background: #047857;
   transform: translateY(-2px);
 }
 
