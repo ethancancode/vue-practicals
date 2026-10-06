@@ -7,7 +7,7 @@ const multer = require('multer');
 const fs = require('fs');
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -23,7 +23,7 @@ app.use('/uploads', express.static(uploadsDir));
 // DATABASE CONNECTIONS
 // ==========================================
 
-// 1. Connect to MongoDB (for Job Applications - Practical 4)
+// 1. Connect to MongoDB (for Job Applications & Practical 8 CRUD)
 mongoose.connect('mongodb://127.0.0.1:27017/jobapps')
     .then(() => console.log('Connected to MongoDB (jobapps)'))
     .catch(err => console.error('MongoDB connection error:', err));
@@ -47,8 +47,10 @@ const db = new sqlite3.Database(dbPath, (err) => {
 });
 
 // ==========================================
-// SCHEMAS & MODELS (Practical 4)
+// SCHEMAS & MODELS (Practical 4 & Practical 8)
 // ==========================================
+
+// Practical 4: Job Application Schema
 const JobApplicationSchema = new mongoose.Schema({
     personal: {
         name: { type: String, required: true },
@@ -71,6 +73,14 @@ const JobApplicationSchema = new mongoose.Schema({
 });
 
 const JobApplication = mongoose.model('JobApplication', JobApplicationSchema);
+
+// Practical 8: Item Schema
+const ItemSchema = new mongoose.Schema({
+    name: { type: String, required: [true, 'Item name is required'], trim: true },
+    description: { type: String, trim: true, default: '' }
+}, { timestamps: true });
+
+const P8Item = mongoose.model('P8Item', ItemSchema);
 
 // Configure Multer Storage (Practical 3)
 const storage = multer.diskStorage({
@@ -151,6 +161,78 @@ app.get('/api/applications', async (req, res) => {
         res.json(applications);
     } catch (err) {
         res.status(500).json({ error: err.message });
+    }
+});
+
+// ==========================================
+// ROUTES - PRACTICAL 8 (MONGODB CRUD)
+// ==========================================
+
+// 1. CREATE - POST /api/items
+app.post('/api/items', async (req, res) => {
+    try {
+        const { name, description } = req.body;
+        if (!name) {
+            return res.status(400).json({ error: 'Item name is required' });
+        }
+        const item = await P8Item.create({ name, description });
+        res.status(201).json(item);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// 2. READ ALL - GET /api/items
+app.get('/api/items', async (req, res) => {
+    try {
+        const items = await P8Item.find().sort({ createdAt: -1 });
+        res.json(items);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// 3. READ ONE - GET /api/items/:id
+app.get('/api/items/:id', async (req, res) => {
+    try {
+        const item = await P8Item.findById(req.params.id);
+        if (!item) {
+            return res.status(404).json({ message: 'Item not found' });
+        }
+        res.json(item);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// 4. UPDATE - PUT /api/items/:id
+app.put('/api/items/:id', async (req, res) => {
+    try {
+        const { name, description } = req.body;
+        const item = await P8Item.findByIdAndUpdate(
+            req.params.id,
+            { name, description },
+            { new: true, runValidators: true }
+        );
+        if (!item) {
+            return res.status(404).json({ message: 'Item not found' });
+        }
+        res.json(item);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// 5. DELETE - DELETE /api/items/:id
+app.delete('/api/items/:id', async (req, res) => {
+    try {
+        const item = await P8Item.findByIdAndDelete(req.params.id);
+        if (!item) {
+            return res.status(404).json({ message: 'Item not found' });
+        }
+        res.json({ message: 'Item deleted successfully', id: req.params.id });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
     }
 });
 

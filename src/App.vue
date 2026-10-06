@@ -39,6 +39,16 @@
             Practical 7
             <span class="btn-subtext">External API Data Fetching (useFetch & JSONPlaceholder)</span>
           </button>
+
+          <button class="portal-btn btn-eight" @click="activePrac = 'eight'">
+            Practical 8
+            <span class="btn-subtext">MongoDB CRUD Operations with Express.js</span>
+          </button>
+
+          <button class="portal-btn btn-role" @click="activePrac = 'role'">
+            Assignment: Role-Based System
+            <span class="btn-subtext">Vue + Express + MongoDB RBAC System (Admin, Editor, Viewer)</span>
+          </button>
         </div>
       </div>
     </div>
@@ -55,6 +65,8 @@
       <PracTwo v-else-if="activePrac === 'two'" />
       <PracThree v-else-if="activePrac === 'three'" />
       <PracFour v-else-if="activePrac === 'four'" />
+      <PracEight v-else-if="activePrac === 'eight'" />
+      <AssignmentRole v-else-if="activePrac === 'role'" />
     </div>
   </div>
 </template>
@@ -65,6 +77,8 @@ import PracOne from './prac_one/App.vue';
 import PracTwo from './prac_two/App.vue';
 import PracThree from './prac_three/App.vue';
 import PracFour from './prac_four/App.vue';
+import PracEight from './p8_mongodb_crud/App.vue';
+import AssignmentRole from './assignment_role/App.vue';
 
 const activePrac = ref(null);
 
@@ -83,7 +97,9 @@ const openPracSeven = () => {
 
 <style scoped>
 .portal-wrapper {
-  width: 100vw;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
   min-height: 100vh;
   background: #f1f5f9;
   display: flex;
@@ -208,6 +224,24 @@ h3 {
   transform: translateY(-2px);
 }
 
+.btn-eight {
+  background: #0d9488;
+}
+
+.btn-eight:hover {
+  background: #0f766e;
+  transform: translateY(-2px);
+}
+
+.btn-role {
+  background: #8b5cf6;
+}
+
+.btn-role:hover {
+  background: #7c3aed;
+  transform: translateY(-2px);
+}
+
 .btn-subtext {
   font-size: 11px;
   font-weight: normal;
@@ -222,7 +256,7 @@ h3 {
 
 .back-to-portal-btn {
   position: fixed;
-  top: 15px;
+  top: 75px;
   left: 15px;
   padding: 8px 12px;
   background: #334155;

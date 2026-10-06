@@ -1,0 +1,15 @@
+{
+  "name": "practical-8-mongodb-crud",
+  "version": "1.0.0",
+  "description": "MongoDB CRUD Operations with Express",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "dotenv": "^16.3.1"
+  }
+}
