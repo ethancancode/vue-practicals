@@ -45,6 +45,11 @@
             <span class="btn-subtext">MongoDB CRUD Operations with Express.js</span>
           </button>
 
+          <button class="portal-btn btn-nine" @click="activePrac = 'nine'">
+            Practical 9
+            <span class="btn-subtext">State Management Deep Dive with Pinia</span>
+          </button>
+
           <button class="portal-btn btn-role" @click="activePrac = 'role'">
             Assignment: Role-Based System
             <span class="btn-subtext">Vue + Express + MongoDB RBAC System (Admin, Editor, Viewer)</span>
@@ -66,6 +71,7 @@
       <PracThree v-else-if="activePrac === 'three'" />
       <PracFour v-else-if="activePrac === 'four'" />
       <PracEight v-else-if="activePrac === 'eight'" />
+      <PracNine v-else-if="activePrac === 'nine'" />
       <AssignmentRole v-else-if="activePrac === 'role'" />
     </div>
   </div>
@@ -78,6 +84,7 @@ import PracTwo from './prac_two/App.vue';
 import PracThree from './prac_three/App.vue';
 import PracFour from './prac_four/App.vue';
 import PracEight from './p8_mongodb_crud/App.vue';
+import PracNine from './p9_pinia_state/App.vue';
 import AssignmentRole from './assignment_role/App.vue';
 
 const activePrac = ref(null);
@@ -230,6 +237,15 @@ h3 {
 
 .btn-eight:hover {
   background: #0f766e;
+  transform: translateY(-2px);
+}
+
+.btn-nine {
+  background: #ec4899;
+}
+
+.btn-nine:hover {
+  background: #db2777;
   transform: translateY(-2px);
 }
 
