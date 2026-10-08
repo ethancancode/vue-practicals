@@ -50,6 +50,11 @@
             <span class="btn-subtext">State Management Deep Dive with Pinia</span>
           </button>
 
+          <button class="portal-btn btn-ten" @click="openPracTen">
+            Practical 10
+            <span class="btn-subtext">Nuxt 3 Form Validation & Error Handling (Client & Server)</span>
+          </button>
+
           <button class="portal-btn btn-role" @click="activePrac = 'role'">
             Assignment: Role-Based System
             <span class="btn-subtext">Vue + Express + MongoDB RBAC System (Admin, Editor, Viewer)</span>
@@ -99,6 +104,10 @@ const openPracSix = () => {
 
 const openPracSeven = () => {
   window.location.href = 'http://localhost:3000/posts';
+};
+
+const openPracTen = () => {
+  window.location.href = 'http://localhost:3000/prac_ten';
 };
 </script>
 
@@ -246,6 +255,15 @@ h3 {
 
 .btn-nine:hover {
   background: #db2777;
+  transform: translateY(-2px);
+}
+
+.btn-ten {
+  background: #7c3aed;
+}
+
+.btn-ten:hover {
+  background: #6d28d9;
   transform: translateY(-2px);
 }
 
