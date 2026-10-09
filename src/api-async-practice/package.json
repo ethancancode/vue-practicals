@@ -1,0 +1,12 @@
+{
+  "name": "async-api-practice",
+  "version": "1.0.0",
+  "description": "Practice callbacks, promises, and async/await with API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
+}

@@ -8,6 +8,7 @@
     "dev:vite": "vite",
     "dev:nuxt": "npm --prefix src/prac_five run dev",
     "dev:backend": "node backend/server.js",
+    "asgn2": "node src/api-async-practice/app.js",
     "seed:role": "npm --prefix src/assignment_role/backend run seed",
     "build": "vite build",
     "preview": "vite preview"
@@ -21,6 +22,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.4.1",
     "multer": "^1.4.5-lts.1",
+    "node-fetch": "^2.7.0",
     "pinia": "^4.0.3",
     "sqlite3": "^6.0.1",
     "vue": "^3.5.40"
